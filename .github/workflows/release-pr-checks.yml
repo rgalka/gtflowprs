@@ -9,6 +9,8 @@ jobs:
   check-release-branch-and-tag:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
       - name: Check source branch prefix
         run: |
           if [[ "${{ github.head_ref }}" != release/* ]]; then
