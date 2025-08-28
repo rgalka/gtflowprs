@@ -1,0 +1,8 @@
+on:
+  pull_request: 
+    branches:
+      - develop
+      - main
+jobs:
+  run:
+    echo "This is common task"
