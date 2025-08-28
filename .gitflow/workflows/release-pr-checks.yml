@@ -1,0 +1,30 @@
+name: Check release PR branch and tag
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  check-release-branch-and-tag:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check source branch prefix
+        run: |
+          if [[ "${{ github.head_ref }}" != release/* ]]; then
+            echo "PR must come from a branch starting with release/"
+            exit 1
+          fi
+      - name: Fetch tags
+        run: git fetch --tags
+      - name: Check for matching tag
+        run: |
+          # Get the latest commit for the PR branch
+          git fetch origin ${{ github.head_ref }}
+          COMMIT=$(git rev-parse origin/${{ github.head_ref }})
+          # Find tags for this commit
+          TAGS=$(git tag --points-at $COMMIT | grep -E '^(v|release)')
+          if [[ -z "$TAGS" ]]; then
+            echo "No matching tag (v* or release*) found on the PR branch commit"
+            exit 1
+          fi
