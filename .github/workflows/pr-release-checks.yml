@@ -12,4 +12,4 @@ jobs:
           echo "This is release task"
           echo "Should be triggered when created PR for:"
           echo " - main"
-          ehco " and proper tags added"
+          echo " and proper tags added"
