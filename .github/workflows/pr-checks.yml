@@ -7,9 +7,10 @@ on:
       - develop
   jobs:
     SRMS:
-      uses: |
-        if [[ "${{ github.base_ref }}" == main ]]; then
-          pr-release-checks.yml
-        fi
-        pr-common-checks.yml
+      pr-release-checks:
+        if: github.base_ref == 'main'
+        uses: ./.github/workflows/pr-release-checks.yml
+
+        pr-common-checks:
+          uses: ./.github/workflows/pr-common-checks.yml
 
