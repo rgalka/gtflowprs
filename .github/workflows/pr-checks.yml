@@ -1,0 +1,15 @@
+name: PR management
+
+on:
+  pull_request:
+    branches:
+      - main
+      - develop
+  jobs:
+    SRMS:
+      uses: |
+        if [[ "${{ github.base_ref }}" == main ]]; then
+          pr-release-checks.yml
+        fi
+        pr-common-checks.yml
+

@@ -4,7 +4,7 @@ on:
   pull_request:
     branches:
       - main
-
+  
 jobs:
   check-release-branch-and-tag:
     runs-on: ubuntu-latest

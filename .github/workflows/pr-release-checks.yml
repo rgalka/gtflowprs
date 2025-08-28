@@ -1,0 +1,15 @@
+on:
+  pull_request: 
+    branches:
+      - main
+
+jobs: 
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Echo task type
+        run: |
+          echo "This is release task"
+          echo "Should be triggered when created PR for:"
+          echo " - main"
+          ehco " and proper tags added"
