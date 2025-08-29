@@ -1,0 +1,15 @@
+on:
+  pull_request: 
+    branches:
+      - develop
+      - main
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Echo task type
+        run: | 
+          echo "This is common task"
+          echo "Should be triggered when created PR for:"
+          echo " - develop"
+          echo " - main"
