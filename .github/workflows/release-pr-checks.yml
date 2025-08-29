@@ -19,9 +19,7 @@ jobs:
         run: git fetch --tags
       - name: Check for matching tag
         run: |
-          echo "skip this step"
-          run: |
-          Get the latest commit for the PR branch
+          echo "Get the latest commit for the PR branch"
           git fetch origin ${{ github.head_ref }}
           COMMIT=$(git rev-parse origin/${{ github.head_ref }})
           echo "last commit is: $COMMIT"
