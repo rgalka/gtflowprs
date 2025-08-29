@@ -19,16 +19,16 @@ jobs:
         run: git fetch --tags
       - name: Check for matching tag
         run: |
-          echo "skip this step"
-          run: |
-          Get the latest commit for the PR branch
+          echo "Get the latest commit for the PR branch"
           git fetch origin ${{ github.head_ref }}
           COMMIT=$(git rev-parse origin/${{ github.head_ref }})
           echo "last commit is: $COMMIT"
-          Find tags for this commit
+          echo "Finding tags for this commit"
           TAGS=$(git tag --points-at $COMMIT | grep -E '^(v|release)')
           echo "lets check if there is any tag TAGS = $TAGS"
           if [[ -z "$TAGS" ]]; then
             echo "No matching tag (v* or release*) found on the PR branch commit"
             exit 1
+          else
+            echo "Commit $COMMIT has following tag: $TAGS"
           fi
