@@ -9,4 +9,3 @@
 - feature branch into dev
 - release branch from dev
 - release into master
-
