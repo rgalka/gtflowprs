@@ -1,5 +1,3 @@
-name: Check release PR branch and tag
-
 on:
   pull_request:
     branches:
