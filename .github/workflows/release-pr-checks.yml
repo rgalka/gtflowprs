@@ -29,4 +29,6 @@ jobs:
           if [[ -z "$TAGS" ]]; then
             echo "No matching tag (v* or release*) found on the PR branch commit"
             exit 1
+          else
+            echo "Commit $COMMIT has following tag: $TAGS"
           fi
