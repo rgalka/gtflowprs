@@ -1,3 +1,4 @@
+name: Common checks for Develop and Main
 on:
   pull_request: 
     branches:
@@ -11,5 +12,5 @@ jobs:
         run: | 
           echo "This is common task"
           echo "Should be triggered when created PR for:"
-          echo " - develop"
-          echo " - main"
+          echo " - develop branch"
+          echo " - main branch"
