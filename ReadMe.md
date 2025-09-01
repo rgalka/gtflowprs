@@ -10,6 +10,10 @@
 - release branch from dev
 - release into master
 
+2. first failed testcase
+- incorrect branch name
+
+
 ## Merging conflicts
 - check if merging release works fine
 - check if multifile edit fires merging conflicts
