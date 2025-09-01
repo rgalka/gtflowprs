@@ -24,11 +24,19 @@ jobs:
           COMMIT=$(git rev-parse origin/${{ github.head_ref }})
           echo "last commit is: $COMMIT"
           echo "Finding tags for this commit"
-          TAGS=$(git tag --points-at $COMMIT | grep -E '^(v|release)')
-          echo "lets check if there is any tag TAGS = $TAGS"
+          # Getting all tags from commit
+          TAGS=$(git tag --points-at $COMMIT)
+          echo "Such tags found: $TAGS"
+          # Checking if there any tags attached to commit
           if [[ -z "$TAGS" ]]; then
-            echo "No matching tag (v* or release*) found on the PR branch commit"
+            echo "Tags are missing"
             exit 1
-          else
-            echo "Commit $COMMIT has following tag: $TAGS"
           fi
+          
+          VTAG=$(grep -E '^(v|release)' <<< "$TAGS")
+          if [[ -z "$VTAG" ]]; then
+            echo "v** or release** tag is missing. Add correct tag into commit"
+            exit 1
+          fi
+          
+          echo "Release commit with tag $VTAG"
