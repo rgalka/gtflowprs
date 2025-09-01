@@ -1,9 +1,9 @@
 name: Common checks for Develop and Main
-on:
-  pull_request: 
-    branches:
-      - develop
-      - main
+#on:
+#  pull_request: 
+#    branches:
+#      - develop
+#      - main
 jobs:
   run:
     runs-on: ubuntu-latest

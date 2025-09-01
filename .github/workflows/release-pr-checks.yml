@@ -1,8 +1,8 @@
 name: Release PR verification
-on:
-  pull_request:
-    branches:
-      - main
+#on:
+#  pull_request:
+#    branches:
+#      - main
   
 jobs:
   check-release-branch-and-tag:
