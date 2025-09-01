@@ -1,4 +1,4 @@
-name: PR management
+name: Pull Request actions
 
 on:
   pull_request:
