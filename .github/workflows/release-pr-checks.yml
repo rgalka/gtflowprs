@@ -33,7 +33,7 @@ jobs:
           fi
           
           VTAG=$(grep -E '^(v|release)' <<< "$TAGS")
-          if [[ -z "$VTAG" ]]
+          if [[ -z "$VTAG" ]]; then
             echo "v** or release** tag is missing. Add correct tag into commit"
             exit 1
           fi
