@@ -39,3 +39,6 @@ jobs:
           fi
           
           echo "Release commit with tag $VTAG"
+          else
+            echo "Commit $COMMIT has following tag: $TAGS"
+          fi
