@@ -12,3 +12,4 @@
 
 ## Merging conflicts
 - check if merging release works fine
+- check if multifile edit fires merging conflicts
