@@ -9,3 +9,6 @@
 - feature branch into dev
 - release branch from dev
 - release into master
+
+## Merging conflicts
+- check if merging release works fine
