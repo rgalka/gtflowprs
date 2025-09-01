@@ -9,3 +9,7 @@
 - feature branch into dev
 - release branch from dev
 - release into master
+
+## Thinks to check and fix
+
+- merging conflicts when creating release PR

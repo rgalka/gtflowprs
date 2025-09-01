@@ -23,13 +23,11 @@ jobs:
           git fetch origin ${{ github.head_ref }}
           COMMIT=$(git rev-parse origin/${{ github.head_ref }})
           echo "last commit is: $COMMIT"
-          echo "Finding tags for this commit"
           # Getting all tags from commit
           TAGS=$(git tag --points-at $COMMIT)
-          echo "Such tags found: $TAGS"
           # Checking if there any tags attached to commit
           if [[ -z "$TAGS" ]]; then
-            echo "Tags are missing"
+            echo "No tags point to last commit"
             exit 1
           fi
           
