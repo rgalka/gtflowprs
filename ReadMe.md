@@ -10,6 +10,8 @@
 - release branch from dev
 - release into master
 
+2. if wrong branch then error
+
 ## Merging conflicts
 - check if merging release works fine
 - check if multifile edit fires merging conflicts
